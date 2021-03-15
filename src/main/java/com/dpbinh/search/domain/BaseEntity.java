@@ -1,15 +1,17 @@
 package com.dpbinh.search.domain;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.io.Serializable;
+import java.time.OffsetDateTime;
 import java.time.ZonedDateTime;
 import java.util.List;
 import java.util.Objects;
 
-public class BaseEntity implements Serializable {
+public class BaseEntity<ID> implements Serializable {
     @JsonProperty("_id")
-    protected Long id;
+    protected ID id;
 
     @JsonProperty("url")
     protected String url;
@@ -18,16 +20,17 @@ public class BaseEntity implements Serializable {
     protected String externalId;
 
     @JsonProperty("created_at")
-    protected ZonedDateTime createdAt;
+    @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss XXX")
+    protected OffsetDateTime createdAt;
 
     @JsonProperty("tags")
     protected List<String> tags;
 
-    public Long getId() {
+    public ID getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(ID id) {
         this.id = id;
     }
 
@@ -47,11 +50,11 @@ public class BaseEntity implements Serializable {
         this.externalId = externalId;
     }
 
-    public ZonedDateTime getCreatedAt() {
+    public OffsetDateTime  getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(ZonedDateTime createdAt) {
+    public void setCreatedAt(OffsetDateTime  createdAt) {
         this.createdAt = createdAt;
     }
 

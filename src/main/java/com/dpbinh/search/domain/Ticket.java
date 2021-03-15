@@ -1,10 +1,12 @@
 package com.dpbinh.search.domain;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.time.OffsetDateTime;
 import java.time.ZonedDateTime;
 
-public class Ticket extends BaseEntity {
+public class Ticket extends BaseEntity<String> {
 
     @JsonProperty("type")
     private String type;
@@ -34,7 +36,8 @@ public class Ticket extends BaseEntity {
     private Boolean hasIncidents;
 
     @JsonProperty("due_at")
-    private ZonedDateTime dueAt;
+    @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss XXX")
+    private OffsetDateTime dueAt;
 
     @JsonProperty("via")
     private String via;
@@ -112,11 +115,11 @@ public class Ticket extends BaseEntity {
         this.hasIncidents = hasIncidents;
     }
 
-    public ZonedDateTime getDueAt() {
+    public OffsetDateTime getDueAt() {
         return dueAt;
     }
 
-    public void setDueAt(ZonedDateTime dueAt) {
+    public void setDueAt(OffsetDateTime dueAt) {
         this.dueAt = dueAt;
     }
 

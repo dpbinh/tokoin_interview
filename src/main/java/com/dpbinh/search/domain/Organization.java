@@ -6,7 +6,7 @@ import java.io.Serializable;
 import java.time.ZonedDateTime;
 import java.util.List;
 
-public class Organization extends BaseEntity {
+public class Organization extends BaseEntity<Long> {
 
     @JsonProperty("name")
     private String name;

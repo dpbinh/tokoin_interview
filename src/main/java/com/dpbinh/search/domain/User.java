@@ -1,11 +1,13 @@
 package com.dpbinh.search.domain;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.time.OffsetDateTime;
 import java.time.ZonedDateTime;
 import java.util.List;
 
-public class User extends BaseEntity {
+public class User extends BaseEntity<Long> {
 
     @JsonProperty("name")
     private String name;
@@ -29,7 +31,8 @@ public class User extends BaseEntity {
     private String timezone;
 
     @JsonProperty("last_login_at")
-    private ZonedDateTime lastLoginAt;
+    @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss XXX")
+    private OffsetDateTime lastLoginAt;
 
     @JsonProperty("email")
     private String email;
@@ -105,11 +108,11 @@ public class User extends BaseEntity {
         this.timezone = timezone;
     }
 
-    public ZonedDateTime getLastLoginAt() {
+    public OffsetDateTime  getLastLoginAt() {
         return lastLoginAt;
     }
 
-    public void setLastLoginAt(ZonedDateTime lastLoginAt) {
+    public void setLastLoginAt(OffsetDateTime lastLoginAt) {
         this.lastLoginAt = lastLoginAt;
     }
 

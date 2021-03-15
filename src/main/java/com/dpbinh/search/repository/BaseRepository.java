@@ -8,5 +8,5 @@ import java.util.Set;
 public interface BaseRepository<T extends BaseEntity> {
     Set<T> findBy(String fieldName, Object value);
 
-    Optional<T> findOneById(Long id);
+    Optional<T> findOneById(Object id);
 }
