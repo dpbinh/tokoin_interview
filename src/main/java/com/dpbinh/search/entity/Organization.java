@@ -1,9 +1,7 @@
-package com.dpbinh.search.domain;
+package com.dpbinh.search.entity;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.io.Serializable;
-import java.time.ZonedDateTime;
 import java.util.List;
 
 public class Organization extends BaseEntity<Long> {

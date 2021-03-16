@@ -1,4 +1,4 @@
-package com.dpbinh.search.domain;
+package com.dpbinh.search.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;

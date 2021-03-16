@@ -1,11 +1,9 @@
-package com.dpbinh.search.domain;
+package com.dpbinh.search.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.time.OffsetDateTime;
-import java.time.ZonedDateTime;
-import java.util.List;
 
 public class User extends BaseEntity<Long> {
 
