@@ -1,4 +1,6 @@
 package com.dpbinh.search.repository;
 
-public interface TicketRepository {
+import com.dpbinh.search.entity.Ticket;
+
+public interface TicketRepository extends BaseRepository<Ticket> {
 }

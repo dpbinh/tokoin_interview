@@ -1,4 +1,6 @@
 package com.dpbinh.search.repository;
 
-public interface UserRepository {
+import com.dpbinh.search.entity.User;
+
+public interface UserRepository extends BaseRepository<User> {
 }

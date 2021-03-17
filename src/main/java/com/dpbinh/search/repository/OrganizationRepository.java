@@ -1,4 +1,6 @@
 package com.dpbinh.search.repository;
 
-public interface OrganizationRepository {
+import com.dpbinh.search.entity.Organization;
+
+public interface OrganizationRepository extends BaseRepository<Organization> {
 }

@@ -32,7 +32,7 @@ public enum TicketSearchEnum {
         return this.enabled;
     }
 
-    public List<TicketSearchEnum> getAvailable() {
+    public static List<TicketSearchEnum> getAvailable() {
         return Arrays.asList(values()).stream().filter(p -> p.isEnabled()).collect(Collectors.toList());
     }
 }

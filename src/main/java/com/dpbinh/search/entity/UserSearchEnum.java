@@ -36,7 +36,7 @@ public enum UserSearchEnum {
         return this.enabled;
     }
 
-    public List<UserSearchEnum> getAvailable() {
+    public static List<UserSearchEnum> getAvailable() {
         return Arrays.asList(values()).stream().filter(p -> p.isEnabled()).collect(Collectors.toList());
     }
 }

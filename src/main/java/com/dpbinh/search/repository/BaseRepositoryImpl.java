@@ -36,7 +36,7 @@ public class BaseRepositoryImpl<T extends BaseEntity> implements BaseRepository<
             return Optional.empty();
         }
 
-        return Optional.empty();
+        return Optional.ofNullable(this.idIndexMap.get(id));
     }
 
     private void load(String entitiesPath, TypeReference<List<T>> typeReference) throws IOException {

@@ -25,7 +25,7 @@ public enum  OrganizationSearchEnum {
         return this.enabled;
     }
 
-    public List<OrganizationSearchEnum> getAvailable() {
+    public static List<OrganizationSearchEnum> getAvailable() {
         return Arrays.asList(values()).stream().filter(p -> p.isEnabled()).collect(Collectors.toList());
     }
 }
