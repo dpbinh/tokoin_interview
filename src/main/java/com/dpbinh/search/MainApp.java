@@ -1,6 +1,7 @@
 package com.dpbinh.search;
 
-import com.dpbinh.search.gui.MainView;
+import com.dpbinh.search.gui.ViewFactory;
+import com.dpbinh.search.gui.ViewName;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +18,7 @@ public class MainApp implements CommandLineRunner {
             .getLogger(MainApp.class);
 
     @Autowired
-    private MainView mainView;
+    private ViewFactory viewFactory;
 
     public static void main(String[] args) {
          SpringApplication.run(MainApp.class, args);
@@ -25,6 +26,11 @@ public class MainApp implements CommandLineRunner {
 
     @Override
     public void run(String... args) {
-        mainView.draw(new HashMap<>());
+        try {
+            viewFactory.getView(ViewName.MAIN).draw(viewFactory, new HashMap<>());
+        } catch (Exception e) {
+            System.out.printf("Application get exception %s", e.getMessage());
+            logger.error("Application get exception", e);
+        }
     }
 }
